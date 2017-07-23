@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Form</title>
+        <script>
+
+            function f1()
+            {
+                var v1=document.forms["form1"]["fname"].value;
+                var v2=document.forms["form1"]["contact"].value;
+                var v3=document.forms["form1"]["mail"].value;
+                var v4=document.forms["form1"]["add"].value;
+                var atpos = v3.indexOf("@");
+                var dotpos = v3.lastIndexOf(".");
+                
+                if (v1==null)
+                    {
+                        alert("Name cannot be null");
+                    }
+                 if(v2==null || v2 >9999999999 || v2< 1000000000)
+                    {
+                        alert("Invalid number");
+                    }
+                 if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+                    {
+                        alert("Invalid email");
+                    }
+                 if(v4!=null)
+                    {
+                        alert("Invalid address");
+                    }
+                
+                
+            }
+            
+        </script>
+    </head>
+    <body>
+        
+        <h1 align="center" >Form1</h1>
+        <br>
+        <form name="form1" action="todb.php" method="post">
+            <table align ="center">
+            <tr><td>Name</td><td><input type ="text" required="required" name="fname"></td></tr>
+            <tr><td>Phone no.</td><td><input type ="number" min="1000000000" max="9999999999" required="required" name="contact"></td></tr>
+            <tr><td>email</td><td><input type ="email" required="required" name="mail"></td></tr>
+            <tr><td>Address</td><td><input type ="text" required="required" name="add"></td></tr>
+            <tr><td>About</td><td><input type="text" style="height:230px" name="abut"></td></tr>
+            <input type="submit" 
+       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+       tabindex="-1" onClick="f1()"/>
+                
+            </table>
+        </form>
+        
+        </div>
+        
+        
+        
+        
+    </body>
+    
+    
+</html>
